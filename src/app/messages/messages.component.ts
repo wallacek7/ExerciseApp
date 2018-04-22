@@ -10,7 +10,7 @@ export class MessagesComponent implements OnInit {
     Messages: string[];
 
   constructor() {
-    this.Messages = ['You can now choose your own pictures.'];
+    this.Messages = ['Welcome back!'];
    }
 
   ngOnInit() {
