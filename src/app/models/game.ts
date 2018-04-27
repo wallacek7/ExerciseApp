@@ -7,7 +7,9 @@ export class Game {
         { Name: 'Barak Obama', MyQuotes: [] },        
     ];
     Dealer: string = "Kayla Wallace";
-    Picture: string = 'https://media3.s-nbcnews.com/j/msnbc/components/video/201803/tdy_news_welker_trump_180315_1920x1080.nbcnews-ux-1080-600.jpg';
+    Picture: {
+        url: string
+    };
     PlayedQuotes: Quote[] = [
         { Text: "That's fake news", PlayerName: 'Donald Trump', Chosen: false }
     ];
