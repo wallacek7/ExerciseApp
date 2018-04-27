@@ -10,13 +10,11 @@ import { Game, User, Quote } from '../models/game';
 export class GameComponent implements OnInit {
 
     Model = new Game();
-    Me = new User();
+    Me: User;
     private _api = "http://localhost:8080/game";
 
   constructor(private http: Http) {
-    this.Me.Name = "Kayla Wallace"
-    http.get(this._api + "/quotes", { params : { playerId: this.Me.Name } }).subscribe(data=> this.Me.MyQuotes = data.json())
-    setInterval(()=> this.refresh(), 1000)
+   setInterval(()=> this.refresh(), 1000)
   }
   ngOnInit() {
   }
@@ -45,6 +43,11 @@ export class GameComponent implements OnInit {
         });
   }
 
+  login(name: string){
+    this.http.get(this._api + "/quotes", { params : { playerId: name } })
+    .subscribe(data=> this.Me =  {Name: name, MyQuotes: data.json() } )
+  }
+  
   MyPlayedQuote = () => this.Model.PlayedQuotes.find( x => x.PlayerId == this.Me.Name );
   ChosenQuote = () => this.Model.PlayedQuotes.find( x => x.Chosen );
   IsEveryoneDone = () => this.Model.PlayedQuotes.length == this.Model.Players.length - 1;
