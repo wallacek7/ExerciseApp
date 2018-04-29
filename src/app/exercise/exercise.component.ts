@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from "@angular/http";
+import { MessagesService } from '../services/messages.service';
+import { GameService } from '../services/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-exercise',
@@ -7,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExerciseComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private http: Http,
+    private _Router: Router
+  ) { }
 
   ngOnInit() {
   }

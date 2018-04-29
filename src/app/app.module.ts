@@ -31,6 +31,7 @@ import { ExerciseComponent } from './exercise/exercise.component';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'game', component: GameComponent },
+      { path: 'exercise', component: ExerciseComponent },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
