@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MessagesService } from './services/messages.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { MessagesComponent } from './messages/messages.component';
       { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],
-  providers: [],
+  providers: [MessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
