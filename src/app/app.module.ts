@@ -12,6 +12,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessagesService } from './services/messages.service';
 import { LoginComponent } from './login/login.component';
 import { GameService } from './services/game.service';
+import { ExerciseComponent } from './exercise/exercise.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GameService } from './services/game.service';
     HomeComponent,
     GameComponent,
     MessagesComponent,
-    LoginComponent
+    LoginComponent,
+    ExerciseComponent
   ],
   imports: [
     BrowserModule,

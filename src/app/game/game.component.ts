@@ -62,7 +62,7 @@ export class GameComponent implements OnInit {
   join(name: string){
     this._Messages.Messages.push({ Text: 'You\'ve joined this game. Welcome ' + name , Type: 'success'})
     this.http.get(this._api + "/quotes", { params : { playerId: name } })
-    .subscribe(data=> this.Me.MyQuotes =  data.json() } )
+    .subscribe(data=> this.Me.MyQuotes =  data.json())
   }
   
   MyPlayedQuote = () => this.Model.PlayedQuotes.find( x => x.PlayerId == this.Me.Name );
