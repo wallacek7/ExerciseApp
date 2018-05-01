@@ -19,14 +19,22 @@
                     <a class="nav-link" href="#">Inspiration</a>
                     </li>
             </ul>
+            <div class="navbar-text pull-right">
+        <img [src]="Game.pic" style="height: 24px;" />
+        {{Game.Me.Name}}
             </div>
         </div>
-</nav>
--->
+    </div>
+</nav>-->
+
 <!-- Image and text -->
 <nav class="navbar navbar-light" style="background-color: #f78e93;">
     <a class="navbar-brand" href="#">
       <img src="https://wsd.casio.com/assets_v2/img/ico/ico_exercisetimer.png" width="30" height="30" class="d-inline-block align-top" alt="">
       Exercise Tracker
     </a>
+    <div class="navbar-text pull-right">
+        <img [src]="Game.pic" style="height: 24px;" />
+        {{Game.Me.Name}}
+    </div>
 </nav>
