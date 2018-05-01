@@ -13,6 +13,7 @@ import { MessagesService } from './services/messages.service';
 import { LoginComponent } from './login/login.component';
 import { GameService } from './services/game.service';
 import { ExerciseComponent } from './exercise/exercise.component';
+import { InspirationComponent } from './inspiration/inspiration.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ExerciseComponent } from './exercise/exercise.component';
     GameComponent,
     MessagesComponent,
     LoginComponent,
-    ExerciseComponent
+    ExerciseComponent,
+    InspirationComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { ExerciseComponent } from './exercise/exercise.component';
       { path: 'game', component: GameComponent },
       { path: 'exercise', component: ExerciseComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'inspiration', component: InspirationComponent},
       { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],

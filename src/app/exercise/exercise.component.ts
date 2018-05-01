@@ -14,7 +14,8 @@ export class ExerciseComponent implements OnInit {
 
   Me: User;
 
-  constructor(
+  constructor(){}
+  /*constructor(
     private http: Http,
     private _Messages: MessagesService,
     private _Game: GameService,
@@ -22,9 +23,9 @@ export class ExerciseComponent implements OnInit {
   ) { this.Me = _Game.Me;
     if(!this.Me){
         _Router.navigate(['/login']);
-    }
+    } 
   
-  }
+  }*/
 
   ngOnInit() {
   }
