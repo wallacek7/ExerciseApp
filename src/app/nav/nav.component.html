@@ -33,7 +33,7 @@
       <img src="https://wsd.casio.com/assets_v2/img/ico/ico_exercisetimer.png" width="30" height="30" class="d-inline-block align-top" alt="">
       Exercise Tracker
     </a>
-    <div class="navbar-text pull-right">
+    <div class="navbar-text" *ngIf="Game.Me">
         <img [src]="Game.pic" style="height: 24px;" />
         {{Game.Me.Name}}
     </div>

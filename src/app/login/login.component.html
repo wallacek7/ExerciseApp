@@ -41,7 +41,8 @@
 </style>
 <div class="login-form justify-content-center">
         <form >
-            <h2 class="text-center">Log in</h2>       
+            <h2 class="text-center">Log in</h2>
+                  
             <div class="form-group">
                 <input #Name type="text" class="form-control" placeholder="Username" required="required">
             </div>
@@ -52,11 +53,9 @@
                 <button type="submit" class="btn btn-primary btn-block" (click)="login(Name.value, Password.value)">Login</button>
             </div>
             <div class="clearfix">
-                <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-                <a href="#" class="pull-right">Forgot Password?</a>
-            </div>        
+                <button class="btn btn-block border-success text-success bg-light" (click)="googlelogin()" >Login with Google</button>
+            </div>         
         </form>
-        <p class="text-center"><a href="#">Create an Account</a></p>
 </div>
 
     
