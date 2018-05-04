@@ -1,0 +1,30 @@
+html, body {
+    height: 85%;
+    width: 85%;
+    position: absolute;
+    background-color: whitesmoke;
+    background-image: url('http://jonvilma.com/images/sunrise-1.jpg');
+    background-size: auto;
+    background-position: center;
+  }
+#new {
+    outline: black;
+    padding-top: 2px;
+    text-decoration: none;
+    opacity: 0.6;
+    background-color: grey;
+    color: white;
+    border: thin solid white;
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+#quoteDisplay {
+    color: grey;
+    font-size: 3.0em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    letter-spacing: 0em;
+    opacity: 0.8;
+  }
