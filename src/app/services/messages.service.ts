@@ -7,7 +7,7 @@ export class MessagesService {
 
   constructor() {
     this.Messages = [
-        { Text: 'This is initialized in the service.', Type: 'success'}
+        
         
     ];
   }

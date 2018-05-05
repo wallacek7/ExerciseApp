@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
 import { MessagesService } from '../services/messages.service';
@@ -14,20 +15,25 @@ export class ExerciseComponent implements OnInit {
 
   Me: User;
 
-  constructor(){}
-  /*constructor(
-    private http: Http,
-    private _Messages: MessagesService,
-    private _Game: GameService,
-    private _Router: Router
-  ) { this.Me = _Game.Me;
-    if(!this.Me){
-        _Router.navigate(['/login']);
-    } 
   
+
+  constructor(
+    private _Messages: MessagesService,
+    private _Router: Router,
+    private http: Http
+  ){}
+  /*constructor(
+    
+    private _Game: GameService,
+    
+  ) 
   }*/
 
   ngOnInit() {
   }
+submitForm(e: MouseEvent, text: string){
+ /* e.preventDefault();*/
 
+  this._Messages.Messages.push({ Text: 'Workout submitted!', Type: 'success'})
+}
 }
