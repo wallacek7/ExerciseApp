@@ -37,36 +37,10 @@ export class GameComponent implements OnInit {
     this.http.get(this._api + "/state")
         .subscribe(data=> this.Model = data.json())
   }
-  flipPicture(e: MouseEvent){
-    this._Messages.Messages.push({ Text: 'Picture Flipped', Type: 'success'})
-    this.http.post(this._api + "/picture", {})
-      .subscribe();
-  }
   
-  
-
-  submitQuote(e: MouseEvent, text: string){
-    e.preventDefault();
-
-    if(this.MyPlayedQuote()) return;
-
-    this._Messages.Messages.push({ Text: 'Quote submitted: ' + text, Type: 'success'})
-    this.http.post(this._api + "/quotes", { Text: text, PlayerId: this.Me.Name })
-        .subscribe(data=> {
-            if(data.json().success){
-                this.Me.MyQuotes.splice( this.Me.MyQuotes.indexOf(text), 1 );
-            }
-        });
-  }
-
   join(name: string){
-    this._Messages.Messages.push({ Text: 'You\'ve joined this game. Welcome ' + name , Type: 'success'})
+    this._Messages.Messages.push({ Text: 'You\'ve logged in. Welcome ' + name , Type: 'success'})
     this.http.get(this._api + "/quotes", { params : { playerId: name } })
     .subscribe(data=> this.Me.MyQuotes =  data.json())
   }
-  
-  MyPlayedQuote = () => this.Model.PlayedQuotes.find( x => x.PlayerId == this.Me.Name );
-  ChosenQuote = () => this.Model.PlayedQuotes.find( x => x.Chosen );
-  IsEveryoneDone = () => this.Model.PlayedQuotes.length == this.Model.Players.length - 1;
-  IAmTheDealer = () => this.Me.Name == this.Model.DealerId;
 }

@@ -11,8 +11,9 @@ export class GameService {
     token: string;
     pic: string;
 
-  constructor(private http: Http, private _Messages: MessagesService, private _Router: Router) {
-      
+  constructor(private http: Http, 
+    private _Messages: MessagesService, 
+    private _Router: Router) {   
   }
 
   login(name: string, password: string){

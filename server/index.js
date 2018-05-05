@@ -11,8 +11,6 @@ const servername = "localhost";
 const port = 8080;
 
 
-
-
 app
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: false }))
