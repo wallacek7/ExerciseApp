@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { InspirationComponent } from './inspiration/inspiration.component';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'game', component: GameComponent },
@@ -39,7 +41,10 @@ import { InspirationComponent } from './inspiration/inspiration.component';
       { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],
-  providers: [MessagesService, GameService],
+  providers: [
+    MessagesService, 
+    GameService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

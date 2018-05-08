@@ -7,9 +7,13 @@ export class Game {
 export class User {
     Name: string;
     MyQuotes: string[];
+   // MyLogs: string[];
 }
 export class Quote {
     Text: string;
     PlayerId: string;
 
+}
+export class Form {
+    Text: string;
 }

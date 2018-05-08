@@ -11,6 +11,7 @@ import { User } from '../models/game';
   templateUrl: './exercise.component.html',
   styleUrls: ['./exercise.component.css']
 })
+
 export class ExerciseComponent implements OnInit {
 
   Me: User;
@@ -21,6 +22,8 @@ export class ExerciseComponent implements OnInit {
     private _Messages: MessagesService,
     private _Router: Router,
     private http: Http
+
+
   ){}
   /*constructor(
     
@@ -28,11 +31,12 @@ export class ExerciseComponent implements OnInit {
     
   ) 
   }*/
-
+ 
   ngOnInit() {
   }
+
 submitForm(e: MouseEvent, text: string){
- /* e.preventDefault();*/
+ /*e.preventDefault();*/
 
   this._Messages.Messages.push({ Text: 'Workout submitted!', Type: 'success'})
 }
