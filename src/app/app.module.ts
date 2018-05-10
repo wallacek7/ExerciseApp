@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { GameService } from './services/game.service';
 import { ExerciseComponent } from './exercise/exercise.component';
 import { InspirationComponent } from './inspiration/inspiration.component';
+import { EducationComponent } from './education/education.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { InspirationComponent } from './inspiration/inspiration.component';
     MessagesComponent,
     LoginComponent,
     ExerciseComponent,
-    InspirationComponent
+    InspirationComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { InspirationComponent } from './inspiration/inspiration.component';
       { path: 'exercise', component: ExerciseComponent },
       { path: 'login', component: LoginComponent },
       { path: 'inspiration', component: InspirationComponent},
+      { path: 'education', component: EducationComponent},
       { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],
