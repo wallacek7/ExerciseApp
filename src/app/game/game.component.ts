@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Http } from "@angular/http";
-import { Game, User, Quote } from '../models/game';
+import { Game, User } from '../models/game';
+import { NgForm } from '@angular/forms';
 import { MessagesService } from '../services/messages.service';
 import { GameService } from '../services/game.service';
 import { Router } from '@angular/router';
+import { Workout } from '../models/workout'
+
 
 @Component({
   selector: 'app-game',
@@ -15,9 +18,12 @@ import { Router } from '@angular/router';
 export class GameComponent implements OnInit {
 
     Model = new Game();
+    model: Object = {};
     Me: User;
-    //Forms: form[];
-    private _api = "http://localhost:8080/game";
+    workouts: Workout[] = [];
+
+   
+    private _api = "/game";
 
     constructor(
       private http: Http,
@@ -32,10 +38,13 @@ export class GameComponent implements OnInit {
         }
         this.join(this.Me.Name);
 
-   setInterval(()=> this.refresh(), 1000)
+   setInterval(()=> this.refresh(), 10000)
   }
   
   ngOnInit() {
+  }
+  getWorkout() {
+    return JSON.stringify(this.model);
   }
 
   refresh(){
@@ -48,15 +57,18 @@ export class GameComponent implements OnInit {
     this.http.get(this._api + "/quotes", { params : { playerId: name } })
     .subscribe(data=> this.Me.MyQuotes =  data.json())
   }
-  /*getLogs(name: string){
-    this.http.get(this._api + "/logs", {params : { playerId: name}} )
-    .subscribe(data => this.Me.MyLogs = data.json())
+  /*getWorkoutss(name: string){
+    this.http.get(this._api + "/workouts", {params : { playerId: name}} )
+    .subscribe(data => this.Me.MyWorkouts = data.json())
   }*/
   goBack(): void {
     this._Location.back();
   }
-  /**save(): void {
-    this.formService.updateForm(this.form)
-      .subscribe(() => this.goBack());
+  submitted = false;
+
+onSubmit() { this.submitted = true; }
+  /**onSubmit(f: NgForm) {
+    console.log(f.value);  // { first: '', last: '' }
+    console.log(f.valid);  // false
   }*/
 }

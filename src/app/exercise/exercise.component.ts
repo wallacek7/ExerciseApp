@@ -5,8 +5,9 @@ import { MessagesService } from '../services/messages.service';
 import { GameService } from '../services/game.service';
 import { Router } from '@angular/router';
 import { User } from '../models/game';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { Workout } from '../models/workout';
+import { Location } from '@angular/common'; 
 
 /**@Component({
   selector: 'app-exercise',
@@ -33,16 +34,7 @@ import { Workout } from '../models/workout';
     
   ) 
   }
- 
-  ngOnInit() {
-  }
-
-submitForm(e: MouseEvent, text: string){
- /*e.preventDefault();
-
-  this._Messages.Messages.push({ Text: 'Workout submitted!', Type: 'success'})
-}
-}*/
+*/
 @Component({
   selector: 'exercise-form',
   templateUrl: './exercise.component.html'
@@ -54,14 +46,16 @@ export class ExerciseComponent implements OnInit {
   submittedModel: Workout; 
   submitted: boolean = false;
   Me: User;
+  workouts: Workout[] = [];
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private _Messages: MessagesService,
+    private _Location: Location) { }
   
   ngOnInit() {
-      this.model = new Workout('05/08/2018', 'Cardio', '', '');
-      
-                     
-                     
+      this.model = new Workout(1, '05/08/2018', 'Cardio', '', '');
+                   
       this.exerciseForm = this.formBuilder.group({
         date:     [this.model.date],
         exercise: [this.model.exercise],
@@ -74,4 +68,10 @@ export class ExerciseComponent implements OnInit {
     this.submitted = true;
     this.submittedModel = value;
   }
-}
+  submitForm(e: MouseEvent, text: string){
+     this._Messages.Messages.push({ Text: 'Workout submitted!', Type: 'success'})
+   }
+   goBack(): void {
+    this._Location.back();
+  }
+  }

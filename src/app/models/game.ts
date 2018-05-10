@@ -2,18 +2,22 @@
 export class Game {
    
     Players: User[] = [];
-    PlayedQuotes: Quote[] = [];
+    Workouts: Workout[] = [];
+}
+export class Workout {
+
+    id: number;
+    date: string;
+    exercise: string;
+    duration: string;
+    notes: string;
 }
 export class User {
     Name: string;
     MyQuotes: string[];
    // MyLogs: string[];
 }
-export class Quote {
-    Text: string;
-    PlayerId: string;
 
-}
 export class Form {
     Text: string;
 }

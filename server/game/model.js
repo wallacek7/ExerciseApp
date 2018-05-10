@@ -2,8 +2,8 @@ var axios = require("axios");
 
 const QuotesStack =  [
     ];
-    const Logs = [
-        {id: 1, type: 'Running', duration: 30, notes: '3mi'}
+    const Workouts = [
+        {id: 1, exercise: 'Running', duration: '30', notes: '3mi'}
     ];
 var iCurrentPicture = 0;
 
